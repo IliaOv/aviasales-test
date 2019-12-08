@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
-import {Filter} from "./components/Filter/Filter";
+import {StopFilter} from "./components/StopFilter/StopFilter";
 import "./App.scss";
 
 class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <Filter />
+        <StopFilter />
       </React.Fragment>
     )
   }
