@@ -1,6 +1,8 @@
-import React, {Component} from 'react';
-import {StopFilter} from "./components/StopFilter/StopFilter";
+import React, { Component } from "react";
+import { StopFilter } from "./components/StopFilter/StopFilter";
 import "./App.scss";
+
+
 
 class App extends Component {
   render() {
@@ -8,8 +10,8 @@ class App extends Component {
       <React.Fragment>
         <StopFilter />
       </React.Fragment>
-    )
+    );
   }
 }
 
-export {App};
+export { App };
