@@ -9,22 +9,20 @@ const types = [
   "3 пересадки"
 ];
 
-const types_label = ["all", "no", "stop_1", "stop_2", "stop_3"];
-
 function ShowTypes() {
   return types.map((item, index) => (
     <label
       key={Math.random()}
-      className={"filter__container"}
-      htmlFor={types_label[index]}
+      className={"stopfilter__container"}
+      htmlFor={item+index}
     >
       <input
         key={Math.random()}
-        className={"filter__checkbox"}
+        className={"stopfilter__checkbox"}
         type="checkbox"
-        id={types_label[index]}
+        id={item+index}
       />
-      <span className={"filter__checkmark"}></span>
+      <span className={"stopfilter__checkmark"}></span>
       {item}
     </label>
   ));
@@ -33,9 +31,9 @@ function ShowTypes() {
 class StopFilter extends PureComponent {
   render() {
     return (
-      <form>
-        <fieldset className={"filter"}>
-          <p className={"filter__header"}>Количество пересадок</p>
+      <form className={"stopfilter"}>
+        <fieldset>
+          <p className={"stopfilter__header"}>Количество пересадок</p>
           <ShowTypes />
         </fieldset>
       </form>
