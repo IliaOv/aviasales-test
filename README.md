@@ -1,5 +1,5 @@
 # aviasales-test
-Тестовое задание Aviasales (frontend)
+Тестовое задание Aviasales (frontend). [Макет](https://www.figma.com/file/4fQe1lEbo4DARjvNtaU0uJ/Aviasales-test-task)
 
 [Ссылка на приложение](https://iliaov.github.io/aviasales-test/public)
 
