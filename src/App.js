@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { Filter } from "./components/Filter/Filter";
 import { Tabs } from "./components/Tabs/Tabs";
+import { Logo } from "./components/Logo/Logo";
+import { Tickets } from "./components/Tickets/Tickets";
+
 import "./App.scss";
 
 class App extends Component {
@@ -15,10 +18,18 @@ class App extends Component {
   };
   render() {
     return (
-      <main className="page__main">
-        <Filter />
-        <Tabs active={this.state.activeIndex} update={this.toggleClass} />
-      </main>
+      <React.Fragment>
+        <header className="page__header">
+          <Logo />
+        </header>
+        <main className="page__main">
+          <Filter />
+          <section className={'container'}>
+            <Tabs active={this.state.activeIndex} update={this.toggleClass} />
+            <Tickets />
+          </section>
+        </main>
+      </React.Fragment>
     );
   }
 }

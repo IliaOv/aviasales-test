@@ -4,7 +4,8 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
   entry: "./src/index",
   output: {
-    filename: "build.js"
+    filename: "build.js",
+    path: path.resolve(__dirname, 'public'),
   },
   module: {
     rules: [
@@ -16,6 +17,10 @@ module.exports = {
       {
         test: /\.s[ac]ss$/i,
         loaders: ["style-loader", "css-loader", "sass-loader"]
+      },
+      {
+        test: /\.svg$/,
+        loader: 'svg-inline-loader'
       }
     ]
   },
