@@ -1,18 +1,18 @@
 import React, { PureComponent } from "react";
 import cx from "classnames";
-import "./MostFilter.scss";
+import "./Tabs.scss";
 
 const types = ["Самый дешевый", "Самый быстрый"];
-const classes = ["mostfilter__type_cheap", "mostfilter__type_fast"];
+const classes = ["tabs__type_cheap", "tabs__type_fast"];
 
 function ShowTypes(props) {
   return types.map((item, index) => (
     <div
       key={index}
       className={cx(
-        "mostfilter__type",
+        "tabs__type",
         classes[index],
-        item === props.active ? "mostfilter__type_active" : null
+        item === props.active ? "tabs__type_active" : null
       )}
       onClick={() => {
         props.update(item);
@@ -23,14 +23,15 @@ function ShowTypes(props) {
   ));
 }
 
-class MostFilter extends PureComponent {
+class Tabs extends PureComponent {
   render() {
+    const { active, update } = this.props;
     return (
-      <div className="mostfilter">
-        <ShowTypes active={this.props.active} update={this.props.update} />
+      <div className="tabs">
+        <ShowTypes active={active} update={update} />
       </div>
     );
   }
 }
 
-export { MostFilter };
+export { Tabs };

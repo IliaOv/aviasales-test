@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import "./StopFilter.scss";
+import "./Filter.scss";
 
 const types = [
   "Все",
@@ -13,27 +13,27 @@ function ShowTypes() {
   return types.map((item, index) => (
     <label
       key={Math.random()}
-      className="stopfilter__container"
+      className="filter__container"
       htmlFor={item + index}
     >
       <input
         key={Math.random()}
-        className="stopfilter__checkbox"
+        className="filter__checkbox"
         type="checkbox"
         id={item + index}
       />
-      <span className="stopfilter__checkmark"></span>
+      <span className="filter__checkmark"></span>
       {item}
     </label>
   ));
 }
 
-class StopFilter extends PureComponent {
+class Filter extends PureComponent {
   render() {
     return (
-      <form className="stopfilter">
+      <form className="filter">
         <fieldset>
-          <p className="stopfilter__header">Количество пересадок</p>
+          <p className="filter__header">Количество пересадок</p>
           <ShowTypes />
         </fieldset>
       </form>
@@ -41,4 +41,4 @@ class StopFilter extends PureComponent {
   }
 }
 
-export { StopFilter };
+export { Filter };

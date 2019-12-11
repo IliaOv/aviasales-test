@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { StopFilter } from "./components/StopFilter/StopFilter";
-import { MostFilter } from "./components/MostFilter/MostFilter";
+import { Filter } from "./components/Filter/Filter";
+import { Tabs } from "./components/Tabs/Tabs";
 import "./App.scss";
 
 class App extends Component {
@@ -16,8 +16,8 @@ class App extends Component {
   render() {
     return (
       <main className="page__main">
-        <StopFilter />
-        <MostFilter active={this.state.activeIndex} update={this.toggleClass} />
+        <Filter />
+        <Tabs active={this.state.activeIndex} update={this.toggleClass} />
       </main>
     );
   }

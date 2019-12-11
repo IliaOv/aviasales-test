@@ -1,4 +1,4 @@
-.mostfilter {
+.tabs {
   display: flex;
 
   font-family: Open Sans, sans-serif;
@@ -6,8 +6,6 @@
   font-weight: 600;
   font-size: 12px;
   line-height: 20px;
-
-  margin-left: 20px;
 
   text-align: center;
   letter-spacing: 0.5px;
@@ -37,12 +35,14 @@
 
     &_fast {
       border-radius: 0 5px 5px 0;
+      border-left: 0;
     }
 
     &_active {
       width: 252px;
 
       background: #2196f3;
+      border: 1px solid #2196f3;
 
       color: #fff;
     }
