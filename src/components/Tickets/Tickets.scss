@@ -1,10 +1,12 @@
 .ticket {
-  width: 502px;
-  height: 184px;
+  width: 31.375rem;
+  height: 11.5rem;
 
   background: #ffffff;
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
+  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.3125rem;
+
+  margin-top: 1.25rem;
 
   &__header {
     display: flex;
@@ -16,10 +18,10 @@
     font-family: Open Sans, sans-serif;
     font-style: normal;
     font-weight: 600;
-    font-size: 24px;
-    line-height: 24px;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
 
-    margin-left: 20px;
+    margin-left: 1.25rem;
 
     display: flex;
     align-items: center;
@@ -28,11 +30,84 @@
   }
 
   &__logo {
-    margin-right: 50px;
+    width: 7.5rem;
+    height: 2.1875rem;
+    position: relative;
+    margin-right: 3.125rem;
+
+    &:before {
+      content: "";
+      position: absolute;
+      background-size: contain;
+      background-repeat: no-repeat;
+      display: block;
+      top: 0;
+      left: 0;
+
+      background-image: url(../../img/s7.svg);
+      width: 6.875rem;
+      height: 2.1875rem;
+    }
   }
 }
 
 .flight {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+
+  margin-bottom: 0.625rem;
+
+  &__header {
+    font-family: Open Sans, sans-serif;
+
+    width: 8.75rem;
+    height: 1.125rem;
+
+    margin: 0;
+
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+
+    letter-spacing: 0.03125rem;
+    text-transform: uppercase;
+
+    color: #a0b0b9;
+  }
+
+  &__text {
+    font-family: Open Sans, sans-serif;
+
+    width: 8.8125rem;
+    height: 1.3125rem;
+
+    margin: 0;
+
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.875rem;
+    line-height: 1.3125rem;
+
+    color: #4a4a4a;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .ticket {
+    width: 100%;
+    max-width: 31.5rem;
+    margin: 1.25rem auto;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  .ticket {
+    height: auto;
+  }
+  .flight {
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+  }
 }

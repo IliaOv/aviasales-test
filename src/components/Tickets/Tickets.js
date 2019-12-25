@@ -1,7 +1,5 @@
 import React, { PureComponent } from "react";
 import "./Tickets.scss";
-import logo from "./../../../public/favicon/s7.svg";
-import SVG from "react-inlinesvg";
 
 const flights = [];
 
@@ -9,13 +7,7 @@ function Header() {
   return (
     <div className={"ticket__header"}>
       <p className={"ticket__price"}>13 400 р</p>
-      <SVG
-        src={logo}
-        width={110}
-        height={36}
-        className={"ticket__logo"}
-        alt={"Логотип авиаперевозчика"}
-      />
+      <i className={"ticket__logo"}></i>
     </div>
   );
 }
@@ -35,7 +27,7 @@ function Flight() {
 
       <div className={"flight__stops"}>
         <h3 className={"flight__header"}>2 пересадки</h3>
-        <p className={"flight__text"}>hkg, jnb</p>
+        <p className={"flight__text"}>HKG, JNB</p>
       </div>
     </div>
   );
@@ -46,6 +38,7 @@ class Tickets extends PureComponent {
     return (
       <article className={"ticket"}>
         <Header />
+        <Flight />
         <Flight />
       </article>
     );

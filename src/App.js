@@ -24,8 +24,9 @@ class App extends Component {
         </header>
         <main className="page__main">
           <Filter />
-          <section className={'container'}>
+          <section className={"container"}>
             <Tabs active={this.state.activeIndex} update={this.toggleClass} />
+            <Tickets />
             <Tickets />
           </section>
         </main>

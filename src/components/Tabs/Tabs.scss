@@ -1,21 +1,22 @@
 .tabs {
   display: flex;
+  justify-content: center;
 
   font-family: Open Sans, sans-serif;
   font-style: normal;
   font-weight: 600;
-  font-size: 12px;
-  line-height: 20px;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
 
   text-align: center;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.03125rem;
   text-transform: uppercase;
 
   cursor: pointer;
 
   &__type {
-    width: 251px;
-    height: 50px;
+    width: 15.6875rem;
+    height: 3.125rem;
 
     display: flex;
     align-items: center;
@@ -23,28 +24,34 @@
 
     background: #fff;
 
-    border: 1px solid #dfe5ec;
+    border: 0.0625rem solid #dfe5ec;
     box-sizing: border-box;
 
     color: #4a4a4a;
 
     &_cheap {
-      border-radius: 5px 0 0 5px;
+      border-radius: 0.3125rem 0 0 0.3125rem;
       border-right: 0;
     }
 
     &_fast {
-      border-radius: 0 5px 5px 0;
+      border-radius: 0 0.3125rem 0.3125rem 0;
       border-left: 0;
     }
 
     &_active {
-      width: 252px;
+      width: 15.75rem;
 
       background: #2196f3;
-      border: 1px solid #2196f3;
+      border: 0.0625rem solid #2196f3;
 
       color: #fff;
     }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .tabs {
+    width: 100%;
   }
 }
