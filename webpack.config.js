@@ -1,8 +1,9 @@
 const path = require("path");
+require("babel-polyfill");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: "./src/index",
+  entry: ["babel-polyfill", "./src/index"],
   output: {
     filename: "build.js",
     path: path.resolve(__dirname, 'public'),

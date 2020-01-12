@@ -6,6 +6,33 @@ import { Tickets } from "./components/Tickets/Tickets";
 
 import "./App.scss";
 
+const f = async () => {
+  let response = await fetch("https://front-test.beta.aviasales.ru/search");
+  let commits = await response.json(); // читаем ответ в формате JSON
+  response = await fetch(
+    `https://front-test.beta.aviasales.ru/tickets?searchId=${commits.searchId}`
+  );
+  commits = await response.json();
+  //console.log(commits.tickets[1]);
+  return commits.tickets[1];
+};
+
+f()
+  .catch(err => console.error(err))
+  .then(ticket => {
+    console.log(ticket);
+  });
+/*
+fetch("https://front-test.beta.aviasales.ru/search")
+  .then(response => response.json())
+  .then(commits =>
+    fetch(
+      `https://front-test.beta.aviasales.ru/tickets?searchId=${commits.searchId}`
+    )
+      .then(response => response.json())
+      .then(commits2 => let ticket = commits2.tickets[1])
+  );
+*/
 class App extends Component {
   state = {
     activeIndex: "Самый дешевый"
@@ -26,6 +53,9 @@ class App extends Component {
           <Filter />
           <section className={"container"}>
             <Tabs active={this.state.activeIndex} update={this.toggleClass} />
+            <Tickets />
+            <Tickets />
+            <Tickets />
             <Tickets />
             <Tickets />
           </section>
