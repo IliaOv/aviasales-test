@@ -1,12 +1,10 @@
 import React, { PureComponent } from "react";
 import "./Tickets.scss";
 
-const flights = [];
-
-function Header() {
+function Header(props) {
   return (
     <div className={"ticket__header"}>
-      <p className={"ticket__price"}>13 400 р</p>
+      <p className={"ticket__price"}>{props.price}</p>
       <i className={"ticket__logo"}></i>
     </div>
   );
@@ -35,9 +33,10 @@ function Flight() {
 
 class Tickets extends PureComponent {
   render() {
+    const { price } = this.props;
     return (
       <article className={"ticket"}>
-        <Header />
+        <Header price={price} />
         <Flight />
         <Flight />
       </article>

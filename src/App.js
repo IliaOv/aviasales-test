@@ -14,15 +14,15 @@ const f = async () => {
   );
   commits = await response.json();
   //console.log(commits.tickets[1]);
-  return commits.tickets[1];
+  return commits.tickets[1].price;
 };
-
+/*
 f()
   .catch(err => console.error(err))
   .then(ticket => {
     console.log(ticket);
   });
-/*
+
 fetch("https://front-test.beta.aviasales.ru/search")
   .then(response => response.json())
   .then(commits =>
@@ -35,7 +35,8 @@ fetch("https://front-test.beta.aviasales.ru/search")
 */
 class App extends Component {
   state = {
-    activeIndex: "Самый дешевый"
+    activeIndex: "Самый дешевый",
+    ticket: 1,
   };
 
   toggleClass = item => {
@@ -53,7 +54,7 @@ class App extends Component {
           <Filter />
           <section className={"container"}>
             <Tabs active={this.state.activeIndex} update={this.toggleClass} />
-            <Tickets />
+            <Tickets price={this.state.ticket}/>
             <Tickets />
             <Tickets />
             <Tickets />
