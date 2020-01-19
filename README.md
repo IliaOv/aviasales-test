@@ -1,5 +1,5 @@
 # aviasales-test
-Тестовое задание Aviasales ([frontend])(https://github.com/KosyanMedia/test-tasks/tree/master/aviasales_frontend)
+Тестовое задание Aviasales [(frontend)](https://github.com/KosyanMedia/test-tasks/tree/master/aviasales_frontend)
 
 [Ссылка на приложение](https://iliaov.github.io/aviasales-test/public)
 
